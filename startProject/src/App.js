@@ -3,6 +3,10 @@ import Expenses from "./components/expenses/Expenses";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/expenses/NewExpense";
 function App() {
+  const SaveAddedExpenseHandler=(expenseDataReceived)=>
+  {
+    console.log(expenseDataReceived);
+  }
   const expenses = [
     {
       id: "e1",
@@ -31,7 +35,7 @@ function App() {
   ];
   return (
     <div>
-      <NewExpense />
+      <NewExpense onSaveAddedExpense={SaveAddedExpenseHandler}/>
       <Card className="expenses">
         <Expenses temp={expenses[0]}/>
         <Expenses temp={expenses[1]}/>

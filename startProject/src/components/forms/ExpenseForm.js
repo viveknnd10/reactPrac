@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     //here we are using multiple states which is also correct 
     //but if we have to use only one state then taht is below
     //const [titleChanged,setTitleChanged]=useState('');
@@ -77,7 +77,7 @@ const ExpenseForm = () => {
                 amount: userInput.enteredAmount,
                 date: new Date(userInput.enteredDate)
              };
-            console.log(expenseData);
+            props.onSaveExportParent(expenseData);
             setUserInput({
                 enteredAmount:'',
                 enteredDate:'',
